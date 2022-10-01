@@ -152,12 +152,14 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-	      <Context docBase="Database" path="/Database" reloadable="true" source="org.eclipse.jst.jee.server:Database">
-	      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" loginTimeout="10" maxWait="5000" name="pool" password="jspwork" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="c##jspstudy"/>
-	      </Context>
-	      <Context docBase="JSP2" path="/JSP2" reloadable="true" source="org.eclipse.jst.jee.server:JSP2"/>
-	      <Context docBase="JSP1" path="/JSP1" reloadable="true" source="org.eclipse.jst.jee.server:JSP1"/>
-      <Context docBase="CookieSession" path="/CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:CookieSession"/></Host>
+	      
+	      
+	      
+      	  <Context docBase="Board" path="/Board" reloadable="true" source="org.eclipse.jst.jee.server:Board">
+      	  	<Resource auth="container" driverClassName="oracle.jdbc.driver.OracleDriver" loginTimeout="10" maxWait="5000" name="pool" username="c##jspstudy" password="jspwork" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" />
+      	  </Context>
+      <Context docBase="Database" path="/Database" reloadable="true" source="org.eclipse.jst.jee.server:Database" />
+      </Host>
     </Engine>
   </Service>
 </Server>
